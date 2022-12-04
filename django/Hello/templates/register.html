@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+
+			font-family: 'Montserrat', sans-serif;
+            background-image: url('static/login.jpg');
+            background-size: cover;
+            background-position: center;
+		}
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #77gdfa;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: #fff;
+		}
+		.login_btn {
+			width: 100%;
+			background: #33ccff !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #f7ba5b !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+
+	</style>
+
+{% block body %}
+
+
+{% if error == "no" %}
+<script>
+    alert("Registration Successful");
+    window.location = ("{% url 'Userlogin' %}")
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Something went wrong, Try again..");
+</script>
+{% endif %}
+    <center>
+
+<div class="container mt-5">
+    <h2 class = "text-center" style = "color : red ; font-weight : bold ;
+     font-family : Castellar"><p style="color:white;font-size:25px;">" User Login "</h2>
+<form class="container mt-4" name="signup" method="post" enctype="multipart/form-data" onsubmit="return checkpass();">
+    {% csrf_token %}
+    <label><b><p style="color:white;font-size:25px;"></b></label>
+    <input type = "text" name="fname" class="form-control" placeholder="Enter your First Name"required><br>
+    <input type = "text" name="lname" class="form-control" placeholder="Enter your Last Name"required><br>
+    <input type = "email" name="email" class="form-control" placeholder="Enter your email"required><br>
+    <input type = "password" name="pwd" class="form-control" placeholder="Enter password" required><br>
+    <input type = "text" name="contact" class="form-control" placeholder="Enter your contact"required><br>
+    <textarea name="address" class="form-control" placeholder="Enter Your Address" required></textarea><br>
+    <input type="file" class="form-control" name="image"required><br>
+
+    <input type="submit" value="Submit" class="btn btn-primary my-2"style="width:200px">
+    </div>
+
+</form>
+    </center>
+	{% endblock %}
+
+
+

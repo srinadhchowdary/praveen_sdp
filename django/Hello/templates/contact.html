@@ -1,0 +1,66 @@
+ {% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+ <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      font-family: 'Montserrat', sans-serif;
+            background-image: url('static/contact.jpeg');
+            background-size: cover;
+            background-position: center;
+    }
+ </style>
+ <div class="container mb-3 py-4">
+    <h1 class="text-center">Contact Us</h1>
+    <form method="post" action="/contact">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>{{data.address}}
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>{{data.address}}
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>{{data.address}}
+        </div>
+        <div class="form-group">
+            <label for="description">Type Of Event</label>
+            <input type="text" class="form-control" id="description" name="description" placeholder="Type Of Event" required>{{data.address}}
+        </div>
+        <div class="form-group">
+            <label for="date">Requested Date</label>
+            <input type="date" class="form-control" id="date" name="date" placeholder="Enter Your Requested Date" required>{{data.address}}
+        </div>
+        <div class="form-group">
+            <label for="count">Estimated Guest Count</label>
+            <input type="number" class="form-control" id="count" name="count" placeholder="Enter Your Estimated Guest Count" required>{{data.address}}
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Aditional Information</label>
+            <textarea class="form-control" id="desc" rows="2" name="desc" placeholder="Additional Information" required>{{data.address}}</textarea>
+        </div>
+         <div class="form-group">
+            <label for="desc">Feedback</label>
+            <textarea class="form-control" id="desc" rows="2" name="desc" placeholder="Feedback" required>{{data.address}}</textarea>
+        </div>
+        <br>
+         <a href="file:///C:/Users/srina/OneDrive/Desktop/sdp/django/Hello/templates/payment.html">
+        <button class="btn btn-primary" type="submit">Submit</button>
+       </a>
+
+    </form>
+
+</div>
+{% endblock body %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}Services{% endblock title %}
+{% block body %}
+<!DOCTYPE html>
+<style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      font-family: 'Montserrat', sans-serif;
+            background-image: url('static/techno.jpg');
+            background-size: cover;
+            background-position: center;
+    }
+    .user_card {
+      width: 350px;
+      margin-top: auto;
+      margin-bottom: auto;
+      background: #77gdfa;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+    }
+
+    .form_container {
+      margin-top: 20px;
+    }
+
+    #form-title{
+      color: #fff;
+
+    }
+
+    .login_btn {
+      width: 100%;
+      background: #33ccff !important;
+      color: white !important;
+    }
+    .login_btn:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+    .login_container {
+      padding: 0 2rem;
+    }
+    .input-group-text {
+      background: #f7ba5b !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    #messages{
+      background-color: grey;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+<head>
+    <div>
+<div style="float: right">
+<img src="https://www.dreamzkraft.com/admin/serviceImage/5ba0fb0989dfd__Choose%20a%20Wedding%20Theme.jpg" />
+</div>
+<div>
+    <h1><b>ABOUT COLLEGEFEST</b></h1><br>
+
+</head>
+
+<body>
+<p>Everyone loves free stuff right? Whether it’s a free T, food samples, exclusive discounts, or the chance to win some amazing prizes,
+            CollegeFest hooks you up with all of the brands that want to give YOU a reward, just for being a college student.
+            Want the chance to get free stuff and win all year long? Be sure to become a CollegeFest Insider! You’ll be the first to know about new events and giveaways.</p><br>
+</div>
+ <br><br><br><br><br><br><br><br><br><br>
+ <div>
+<div style="float: left">
+<img src="https://th.bing.com/th/id/OIP.xOLXFwW1CvY6t3ER1DKWhgHaE7?w=273&h=182&c=7&r=0&o=5&dpr=1.37&pid=1.7" />
+</div>
+<div>
+     <h1><b>Becoming a Sponsor</b></h1>
+<p>CollegeFest presents an unmatched consumer offering for college students by unique and engaging experiences from locally and nationally recognized brands, to form the biggest back to school celebrations. Reach thousands of students at once at our large scale events.
+    Complete the fields below for more information on CollegeFest. You can also contact us for information on reaching students across the country.</p>
+
+   </div>
+     <br><br><br><br><br><br><br><br>
+<div>
+<div style="float: right">
+<img src="https://th.bing.com/th/id/OIP.lFGMEZi1GzxYcltRxk0EdQHaE9?pid=ImgDet&rs=1" />
+</div>
+<div><h1>ARTE CONCERT</h1>
+<p>
+In 2022 Arte Concert has caught eight sets from the very first Stone Techno Festival at UNESCO World Heritage Zollverein on video and released it via their channels. Furthermore, a five-hour Stone Techno concert was recorded at the Ruhr Museum also for Arte Concert in 2021 and has set new standards
+    in the matter of combining music, art and science for a wider audience.</p>
+
+   </div>
+     <br><br><br><br><br><br><br><br>
+
+
+<br>
+<h2>RELEASES</h2>
+<p>
+The Stone Techno Series & Festival is a new kind of multidisciplinary experiment and brings different aspects together. Sampling, creating and releasing music made out of stones and initiating a new festival at the biggest coal mine in Europe. The first Stone Techno Series 2021 consists of 16 internationally renowned and upcoming artists split up into four EPs (limited 180gr marbled vinyl).
+
+For the 2022 Series we have recorded and produced a new sample library created by no-one else than the sampling-king himself: Matthew Herbert. Stay tuned for the next series of releases with a fine selection of pioneering, emerging and boundary pushing artists.</p>
+</body>
+</div>
+    <div class="d-flex justify-content-between footer p-3"> <span>BOOK YOUR EVENT <a href="/contact"> CONTACT US</a></span>  </div>
+    </div>
+</html>
+{% endblock body %}

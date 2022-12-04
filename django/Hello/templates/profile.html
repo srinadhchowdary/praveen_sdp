@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      font-family: 'Montserrat', sans-serif;
+            background-image: url('static/index.jpg');
+            background-size: cover;
+            background-position: center;
+    }
+    .user_card {
+      width: 350px;
+      margin-top: auto;
+      margin-bottom: auto;
+      background: #77gdfa;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+    }
+
+    .form_container {
+      margin-top: 20px;
+    }
+
+    #form-title{
+      color: #fff;
+
+    }
+
+    .login_btn {
+      width: 100%;
+      background: #33ccff !important;
+      color: white !important;
+    }
+    .login_btn:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+    .login_container {
+      padding: 0 2rem;
+    }
+    .input-group-text {
+      background: #f7ba5b !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    #messages{
+      background-color: grey;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    </style>
+<p style="color:white;font-size:25px;">
+<h4 class="mt-4 ml-3" style="font-size: 22px; color: blueviolet;"> {{request.user.first_name}} {{request.user.last_name}}</h4>
+
+<div class="container" style = "margin-top:50px">
+    <h2 class="text-center" style = "font-family : Castellar ; font-weight : bold ; color : red">User Profile</h2>
+    <br>
+    <form method = post enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-8">    
+    <table class = "table">
+    <tr>
+        <p style="color:white;font-size:25px;">
+    <th>First Name</th>
+    <td><input type = text name='fname' class="form-control" placeholder="First Name" value="{{data.user.first_name}}"></td>
+    </tr>
+
+        <tr>
+    <th>Last Name</th>
+    <td><input type = text name='lname' class="form-control" placeholder="Last Name" value="{{data.user.last_name}}"></td>
+    </tr>
+    <tr>
+    <th>EmailID</th>
+    <td><input type = email name='email' class="form-control" placeholder="Email ID" value="{{data.user.username}}" required>{{data.address}}</td>
+    </tr>
+    <tr>
+    <th>Contact</th>
+    <td><input type = text name='contact' class="form-control" placeholder="Contact" value="{{data.mobile}}" required>{{data.address}}</td>
+    </tr>
+
+        <tr>
+    <th>Address</th>
+    <td><textarea name="address" class="form-control" placeholder="Address" required>{{data.address}}</textarea></td>
+    </tr>
+
+    </table></div>
+    <div class="col-sm-3">
+        <label>Image</label>
+        <input type="file" class="form-control" name="image">
+
+      <img src="{{data.image.url}}" width="220px" height="220px">
+</div>
+    <input type = submit value = "update" name = submit class="btn btn-primary">
+    </form>
+    </div>
+
+
+{% if error == "no" %}
+<script>
+    alert("Profile Updated Successfully");
+    window.location = ('{% url "userhome" %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("something went wrong");
+</script>
+{% endif %}
+{% endblock %}
